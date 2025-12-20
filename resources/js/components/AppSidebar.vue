@@ -8,7 +8,6 @@ import {
   IconFileDescription,
   IconFolder,
   IconHelp,
-  IconInnerShadowTop,
   IconListDetails,
   IconReport,
   IconSearch,
@@ -16,9 +15,8 @@ import {
   IconUsers,
 } from "@tabler/icons-vue"
 
-import NavDocuments from '@/components/NavDocuments.vue'
-import NavMain from '@/components/NavMain.vue'
-import NavSecondary from '@/components/NavSecondary.vue'
+import UncleScroogeIcon from '@/components/ui/svg/UncleScroogeIcon.vue';
+import NavMain from '@/components/NavMain.vue'  
 import NavUser from '@/components/NavUser.vue'
 import {
   Sidebar,
@@ -43,25 +41,15 @@ const data = {
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
+      title: "Registros Ofx",
       url: "#",
       icon: IconListDetails,
     },
     {
-      title: "Analytics",
+      title: "Registros",
       url: "#",
       icon: IconChartBar,
-    },
-    {
-      title: "Projects",
-      url: "#",
-      icon: IconFolder,
-    },
-    {
-      title: "Team",
-      url: "#",
-      icon: IconUsers,
-    },
+    }
   ],
   navClouds: [
     {
@@ -158,8 +146,8 @@ const data = {
             class="data-[slot=sidebar-menu-button]:!p-1.5"
           >
             <a href="#">
-              <IconInnerShadowTop class="!size-5" />
-              <span class="text-base font-semibold">Acme Inc.</span>
+              <UncleScroogeIcon />
+              <span class="text-base font-semibold">Uncle Scrooge</span>
             </a>
           </SidebarMenuButton>
         </SidebarMenuItem>

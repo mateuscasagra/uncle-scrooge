@@ -13,20 +13,8 @@ import { SidebarTrigger } from '@/components/ui/sidebar'
         class="mx-2 data-[orientation=vertical]:h-4"
       />
       <h1 class="text-base font-medium">
-        Documents
+        Dashboard
       </h1>
-      <div class="ml-auto flex items-center gap-2">
-        <Button variant="ghost" as-child size="sm" class="hidden sm:flex">
-          <a
-            href="https://github.com/shadcn-ui/ui/tree/main/apps/v4/app/(examples)/dashboard"
-            rel="noopener noreferrer"
-            target="_blank"
-            class="dark:text-foreground"
-          >
-            GitHub
-          </a>
-        </Button>
-      </div>
     </div>
   </header>
 </template>
