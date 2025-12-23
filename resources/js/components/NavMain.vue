@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Component } from "vue"
+import { Link } from "@inertiajs/vue3"
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -24,10 +25,16 @@ defineProps<{
     <SidebarGroupContent class="flex flex-col gap-2">
       <SidebarMenu>
         <SidebarMenuItem v-for="item in items" :key="item.title">
-          <SidebarMenuButton :tooltip="item.title">
-            <component :is="item.icon" v-if="item.icon" />
-            <span>{{ item.title }}</span>
+          
+          <SidebarMenuButton :tooltip="item.title" as-child>
+            
+            <Link :href="item.url" class="flex items-center gap-2">
+              <component :is="item.icon" v-if="item.icon" />
+              <span>{{ item.title }}</span>
+            </Link>
+
           </SidebarMenuButton>
+          
         </SidebarMenuItem>
       </SidebarMenu>
     </SidebarGroupContent>

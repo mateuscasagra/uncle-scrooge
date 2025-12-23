@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import {
   IconCamera,
   IconChartBar,
@@ -28,27 +29,30 @@ import {
   SidebarMenuItem,
 } from '@/components/ui/sidebar'
 
+
+const props = defineProps<{
+  userData: {
+    Name: string;
+    Email: string;
+  }
+}>();
+
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: props.userData.Name,
+    email: props.userData.Email,
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
-      icon: IconDashboard,
+      url: '/dashboard',
+      icon: IconDashboard
     },
     {
       title: "Registros Ofx",
-      url: "#",
-      icon: IconListDetails,
-    },
-    {
-      title: "Registros",
-      url: "#",
-      icon: IconChartBar,
+      url: '/registros',
+      icon: IconListDetails
     }
   ],
   navClouds: [
@@ -155,8 +159,6 @@ const data = {
     </SidebarHeader>
     <SidebarContent>
       <NavMain :items="data.navMain" />
-      <NavDocuments :items="data.documents" />
-      <NavSecondary :items="data.navSecondary" class="mt-auto" />
     </SidebarContent>
     <SidebarFooter>
       <NavUser :user="data.user" />
