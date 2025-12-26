@@ -183,19 +183,18 @@ function copy(id: string) {
 
     <div class="w-full">
       
-      <div class="flex items-center py-4">
+      <div class="flex items-center py-4 justify-between">
         <Input
           class="max-w-sm"
-          placeholder="Filter emails..."
+          placeholder="Busque registros..."
           :model-value="table.getColumn('email')?.getFilterValue() as string"
           @update:model-value="table.getColumn('email')?.setFilterValue($event)"
         />
+        <Button variant="outline" size="sm">
+            Subir Ofx
+        </Button>
         <DropdownMenu>
-          <DropdownMenuTrigger as-child>
-            <Button variant="outline" class="ml-auto">
-              Columns <ChevronDown class="ml-2 h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
+          
           <DropdownMenuContent :align="'end'">
             <DropdownMenuCheckboxItem
               v-for="column in table.getAllColumns().filter((column) => column.getCanHide())"
